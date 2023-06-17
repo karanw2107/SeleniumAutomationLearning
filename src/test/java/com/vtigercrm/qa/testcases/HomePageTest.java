@@ -15,6 +15,8 @@ public class HomePageTest extends TestBase{
 	LoginPage loginPage;
 	LandOnHomePage homePage;
 	TestUtil testUtil;
+	ContactsPage contactsPage;
+	
 	
 	public HomePageTest() {
 		super();
@@ -25,6 +27,7 @@ public class HomePageTest extends TestBase{
 		
 		 initialization();
 		 testUtil = new TestUtil();
+		 contactsPage = new ContactsPage() ;
 		 loginPage = new LoginPage();
 		 homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 	}
@@ -42,9 +45,10 @@ public class HomePageTest extends TestBase{
 	}
 	
 	@Test(priority=3)
-	public ContactsPage goToContactsPage() {
-		homePage.clickOnContactsLink();
-		return new ContactsPage();
+	public void goToContactsPage() {
+		//testUtil.switchToFrame();
+		contactsPage = homePage.clickOnContactsLink();
+		//return new ContactsPage();
 	}
 	
 	@AfterMethod

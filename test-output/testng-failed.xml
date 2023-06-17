@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.vtigercrm.qa.testcases.HomePageTest">
+      <class name="com.vtigercrm.qa.testcases.ContactsPageTest">
         <methods>
+          <include name="validateCreateNewContact"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="verifyHomePageTitle"/>
         </methods>
-      </class> <!-- com.vtigercrm.qa.testcases.HomePageTest -->
+      </class> <!-- com.vtigercrm.qa.testcases.ContactsPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
