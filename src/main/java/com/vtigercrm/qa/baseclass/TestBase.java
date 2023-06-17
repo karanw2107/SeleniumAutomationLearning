@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.vtigercrm.qa.util.TestUtil;
 
@@ -46,6 +47,7 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		
 		driver.get(prop.getProperty("url"));
+		//WebDriverWait wait = new WebDriverWait(driver,50);
 		
 	}
 	

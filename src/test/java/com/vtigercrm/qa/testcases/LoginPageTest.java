@@ -1,4 +1,4 @@
-package com.vtigercrm.qa.testdata;
+package com.vtigercrm.qa.testcases;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -8,13 +8,14 @@ import org.testng.annotations.Test;
 import com.vtigercrm.qa.baseclass.TestBase;
 import com.vtigercrm.pages.LoginPage;
 import com.vtigercrm.pages.ContactsPage;
+import com.vtigercrm.pages.LandOnHomePage;
 
 
 
 public class LoginPageTest extends TestBase{
 
 	LoginPage loginPage;
-	ContactsPage contactsPage;
+	LandOnHomePage homePage;
 	
 	
 	public LoginPageTest() {
@@ -39,7 +40,7 @@ public class LoginPageTest extends TestBase{
 	
 	@Test(priority=2)
 	public void loginTest() {
-		contactsPage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		
 	}
 	

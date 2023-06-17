@@ -10,13 +10,13 @@ public class LoginPage extends TestBase {
 
 	
 	//Page Factory or Object Reporsitory
-	@FindBy(name="username")
+	@FindBy(name="email")
 	WebElement username;
 	
 	@FindBy(name="password")
 	WebElement password;
 	
-	@FindBy(xpath="//*[@id='login-button']")
+	@FindBy(xpath="//div[contains(text(), 'Login')]")
 	WebElement loginbutton;
 	
 	
@@ -31,12 +31,12 @@ public class LoginPage extends TestBase {
 				return driver.getTitle();	
 				}
 	
-	public homePage login (String un, String pwd) {
+	public LandOnHomePage login (String un, String pwd) {
 		username.sendKeys(un);
 		password.sendKeys(pwd);
 		loginbutton.click();
-		
-		return new homePage();
+		  
+		return new LandOnHomePage();
 	}
 }
 
