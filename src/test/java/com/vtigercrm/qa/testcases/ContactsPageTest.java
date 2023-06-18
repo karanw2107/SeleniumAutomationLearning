@@ -1,6 +1,8 @@
 package com.vtigercrm.qa.testcases;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -38,7 +40,7 @@ public class ContactsPageTest extends TestBase{
 		 contactsPage= homePage.clickOnContactsLink();
 	}
 	
-/*	@Test(priority=1)
+	@Test(priority=3)
 	public void verifyContactsPageLabel() {
 		Assert.assertTrue(contactsPage.verifyContactsLabel(),"You may have some issue as I am not able to find the label 'Contacts' on this page.");
 	}
@@ -48,17 +50,17 @@ public class ContactsPageTest extends TestBase{
 		driver.findElement(By.xpath("//div[contains(text(),'View')]")).click();
 		Thread.sleep(2000);
 		contactsPage.selectContacts();
-	}*/
+	}
 	
 	
 	@DataProvider
-	public Object [][] getTestDatafromExcel(String sheetName) {
-		Object [][] data = TestUtil.getTestData(sheetName);
+	public Object[][] getTestDatafromExcel() {
+		Object data[][]  = TestUtil.getTestData(sheetName);
 		return data;
 	}
 	
 	
-	@Test(priority=3, dataProvider="getTestDatafromExcel")
+	@Test(priority=1, dataProvider="getTestDatafromExcel")
 	public void validateCreateNewContact(String firstname, String lastname, String Company) {
 		homePage.clickOnAddNewContactLink();
 		contactsPage.createNewContact(firstname,lastname,Company);
